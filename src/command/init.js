@@ -18,7 +18,7 @@ class Download {
 
   run() {
     this.commander
-      .command('download')
+      .command('init')
       .description('从远程下载代码到本地/Downloading...')
       .action(() => { this.download(); });
 
@@ -94,7 +94,7 @@ class Download {
       downLoadLoad = this.downLoad.start();
       await this.git.downloadProject({ repo, version, repoPath });
       downLoadLoad.succeed('react脚手架初始化成功/React template init successfully');
-      this.commander.command(`cd ${repoPath} && npm i && npm start`)
+      downLoadLoad.succeed(`now, please cd ${repoPath} && npm i && npm start by yourself`);
     } catch (error) {
       console.log(error);
       downLoadLoad.fail('下载代码失败.../Downloa failed');

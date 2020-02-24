@@ -18,7 +18,7 @@ if (existsSync(resolve(__dirname, `command/${todo}.js`))) {
 } else {
   console.log(
     `
-      你输入了未知指令
+      你输入了未知指令/Valid - 加上init来初始化项目吧/Please add 'init' after the command
     `.red,
   );
   process.exit(-1);
