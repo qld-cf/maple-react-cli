@@ -1,2 +1,1 @@
-# maple-react-cli
-react脚手架
+# react-ts-template 脚手架
