@@ -8,3 +8,5 @@
 - 选择模板 'react-ts-template'
 - 输入自定义的项目名
 - 创建模板成功
+
+[模板详情: react-ts-template](https://github.com/qld-cf/react-ts-template)
