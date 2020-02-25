@@ -211,6 +211,9 @@ npm config set registry http://registry.npmjs.org
 - 输入自定义的项目名
 - 创建模板成功
 
+##### githubApi请求错误
+1. 403： 添加token
+2. 401： 不要将token push到仓库，本地测试用；但是推送到npm需要token
 
 
 [github](https://github.com/qld-cf/maple-react-cli)

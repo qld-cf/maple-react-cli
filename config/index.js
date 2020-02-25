@@ -2,4 +2,4 @@
 exports.baseURL = 'https://api.github.com';
 // github 组织名称
 exports.orgName = 'qld-cf';
-exports.token = 'abbc911fa35f9e6dcd725eb2f77288c9cf40284a';
+// exports.token = 'ac9997c85846946684acaa459c889f5004f45aa5';
