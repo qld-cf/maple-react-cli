@@ -35,6 +35,7 @@
 - [axios](https://www.npmjs.com/package/axios)
 -  [命令行交互工具 inquirer.js](https://github.com/SBoudrias/Inquirer.js#documentation)
 -  [ora 命令行loading](https://www.npmjs.com/package/ora)
+- [下载github项目download-git-repo](https://www.npmjs.com/package/download-git-repo)
 
 ```
 yarn add commander inquirer ora axios
