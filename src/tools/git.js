@@ -8,14 +8,14 @@ class Git {
   }
 
   /**
-   * 获取项目组中的项目模板列表
+   * 获取项目模板列表
    */
   getProjectList() {
     return request(`/users/${this.orgName}/repos`);
   }
 
   /**
-   * 获取项目模板的版本列表
+   * 获取版本列表
    * @param {String} repo 项目名称
    */
   getProjectVersions(repo) {
