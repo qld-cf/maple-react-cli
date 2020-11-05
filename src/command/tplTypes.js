@@ -34,6 +34,7 @@ class Download {
     const choices = [
       'react-web-tpl',
       'electron-react-tpl',
+      'koa2-websocket',
     ]
     const questions = [
       {
