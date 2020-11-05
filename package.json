@@ -1,7 +1,8 @@
 {
   "name": "maple-react-cli",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "",
+  "gitRepo": "qld-cf",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,6 +19,8 @@
     "commander": "^2.19.0",
     "download-git-repo": "^1.1.0",
     "inquirer": "^6.2.0",
+    "node-cmd": "^3.0.0",
+    "node-run-cmd": "^1.0.1",
     "ora": "^3.0.0"
   }
 }

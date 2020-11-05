@@ -1,48 +1,52 @@
 # react-ts-template 脚手架
 
+## 快速拉取代码，下载依赖，运行项目一气呵成
+
 #### 使用
-`npm i -g maple-react-cli`
 
-`maple-react-cli init`
+`> npm i -g maple-react-cli`
 
-- 选择模板 'react-ts-template'
-- 输入自定义的项目名
-- 创建模板成功
+`> maple-react-cli`
 
-[模板详情: react-ts-template](https://github.com/qld-cf/react-ts-template)
+```
+? 请选择您接下来的操作 选择模板类型
+? 选一个APP类型来初始化您的项目~ react-web-tpl
+✔ 初始化中..
+✔ 准备拉取代码...
+? 请输入您本地初始化的项目名~ dd
+✔ 拉取代码成功
+✔ 安装依赖成功~
+? 是否运行项目？ yes
+恭喜~项目启动成功~请稍候...
+```
 
+[模板 1 详情: react-web-tpl ](https://github.com/qld-cf/react-web-tpl)
+[模板 2 详情: electron-react-tpl ](https://github.com/qld-cf/electron-react-tpl)
 
 #### 实现
 
-
-> 自己整理了一套日常用的模板，但每次初始化都比较麻烦，所以创建了一个工具并传到npm库，下面介绍实现过程
-
-
-[github](https://github.com/qld-cf/maple-react-cli)
-
 #### 一、准备模板
 
-[react-ts-template](https://github.com/qld-cf/react-ts-template)
+[模板 1 详情: react-web-tpl ](https://github.com/qld-cf/react-web-tpl)
 
-###### 一般放到github repos即可
+###### 一般放到 github repos 即可
 
-
-
-#### 二、cli实现
+#### 二、具体的 cli 工具实现流程
 
 ###### 前提准备
+
 - [命令行处理 commander](https://www.npmjs.com/package/commander)
 - [axios](https://www.npmjs.com/package/axios)
--  [命令行交互工具 inquirer.js](https://github.com/SBoudrias/Inquirer.js#documentation)
--  [ora 命令行loading](https://www.npmjs.com/package/ora)
-- [下载github项目download-git-repo](https://www.npmjs.com/package/download-git-repo)
+- [命令行交互工具 inquirer.js](https://github.com/SBoudrias/Inquirer.js#documentation)
+- [ora 命令行 loading](https://www.npmjs.com/package/ora)
+- [下载 github 项目 download-git-repo](https://www.npmjs.com/package/download-git-repo)
 
 ```
 yarn add commander inquirer ora axios
 ```
 
-
 1. 创建基本文件和目录结构
+
 ```
 
 mkdir maple-react-cli && cd maple-react-cli && npm init // 创建目录
@@ -50,7 +54,8 @@ mkdir bin && cd bin // 创建bin文件夹
 touch maple.js // 创建指令文件
 ```
 
-2. 修改package.json, 添加入口
+2. 修改 package.json, 添加入口
+
 ```
   "bin": {
     "maple-react-cli": "./bin/maple.js" // 关键命令行
@@ -58,6 +63,7 @@ touch maple.js // 创建指令文件
 ```
 
 3. maple.js
+
 ```
 
 #!/usr/bin/env node // shell要以node方式来解析文件
@@ -118,17 +124,18 @@ if (existsSync(resolve(__dirname, `command/${todo}.js`))) {
 exports.baseURL = 'https://api.github.com';
 // github 组织名称
 exports.orgName = 'qld-cf'; // 可改为你的仓库
-exports.token = 'abbc911fa35f9e6dcd725eb2f77288c9cf40284a'; // 避免请求限流
+exports.token = ''; // 避免请求限流
 
 ```
 
-7. 获取github api token
+7. 获取 github api token
 
 > github -> settings -> developer settings -> personal access tokens -> generage new token
 
-拷贝后到配置文件，token最好设置只读
+拷贝后到配置文件，token 最好设置只读
 
 8. command/init.js
+
 ###### 命令和文件名一致，便于拓展其他命令和解耦
 
 ```
@@ -163,58 +170,63 @@ exports.token = 'abbc911fa35f9e6dcd725eb2f77288c9cf40284a'; // 避免请求限�
 ```
 
 ###### 工具类可执行查看功能，主要封装接口；
+
 ###### 至此，工具初始化流程结束
 
-#### 三、 cli运行
+#### 三、 cli 运行
 
 - 本地测试
-```
-npm i
-npm link // 软链到全局npm，就可以使用maple-react-cli
-maple-react-cli init
-```
 
 ```
-✔ 获取项目列表成功/Get repos successfully...
 
-? 请选择你想要的模板/Choose template
-react-ts-template
-
-✔ 获取项目版本成功/Get repos version successfully...
-
-? 请输入项目名称~/Please enter your project name l
-
-✔ react脚手架初始化成功/React template init successfully
-
-✔ now, please cd l && npm i && npm start by yourself
+// 测试软链到全局使用
+> npm i
+> npm link // 软链到全局npm，就可以使用maple-react-cli
+> maple-react-cli init
+// 项目内测试
+> node bin/maple.js
 ```
 
-#### 推送到npmjs
+#### 推送到 npmjs
 
-1. [登录npmjs](https://www.npmjs.com/)
+1. [登录 npmjs](https://www.npmjs.com/)
 2. 还原镜像，避免推送错误
+
 ```
 npm config set registry http://registry.npmjs.org
 ```
-3. 按照提示添加npmjs用户信息： `npm adduser`
+
+3. 按照提示添加 npmjs 用户信息： `npm adduser`
 4. `npm publish`
-5. 去npmjs搜索maple-react-cli
-
-
-
+5. 去 npmjs 搜索 maple-react-cli
 
 #### 使用
+
 `npm i -g maple-react-cli`
 
-`maple-react-cli init`
+`maple-react-cli`
 
 - 选择模板 'react-ts-template'
 - 输入自定义的项目名
 - 创建模板成功
 
-##### githubApi请求错误
-1. 403： 添加token
-2. 401： 不要将token push到仓库，本地测试用；但是推送到npm需要token
+##### githubApi 请求错误
 
+1. 403： 添加 token
+2. 401： 不要将 token push 到仓库，本地测试用；但是推送到 npm 需要 token
+
+#### 修改指定下载的仓库名
+
+```
+// src/tools/git.js
+const { gitRepo } = require('../package.json');
+/**
+  * 获取指定项目
+  * @param {String} repo 项目名称
+  */
+getProjectVersions(repo) {
+  return request(`search/repositories?q=${repo}+user:${gitRepo}`);
+}
+```
 
 [github](https://github.com/qld-cf/maple-react-cli)
