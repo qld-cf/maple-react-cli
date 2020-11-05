@@ -38,9 +38,7 @@ class Download {
         'reactNative',
         'vue',
         'nodejs',
-        'toolWebSite',
         'webpack',
-        'indexdb',
       ]
       const questions = [
         {
@@ -60,53 +58,14 @@ class Download {
           return `x-www-browser ${url}`
         }
       }
-      switch (choice) {
-        case 'react':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/React/'))
-          studyGoOn()
-          break;
-        case 'electron':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/Electron/'))
-          studyGoOn()
-          break;
-        case 'typescript':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/TypeScript/'))
-          studyGoOn()
-          break;
-        case 'reactNative':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/React-Native/'))
-          studyGoOn()
-          break;
-        case 'vue':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/Vue/'))
-          studyGoOn()
-          break;
-        case 'nodejs':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/NodeJs/addons-hello.html'))
-          studyGoOn()
-          break;
-        case 'toolWebSite':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/Tools-WebSite/'))
-          studyGoOn()
-          break;
-        case 'webpack':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/Webpack/#%E6%89%93%E5%8C%85%E5%88%86%E6%9E%90'))
-          studyGoOn()
-          break;
-        case 'indexdb':
-          cmd.run(platformSelect('https://fe-doc.ypshengxian.com/HTML/'))
-          studyGoOn()
-          break;
-
-        default:
-          break;
-      }
+      cmd.run(platformSelect(`https://juejin.im/search?query=${choice}&type=all`))
+      studyGoOn()
     }
 
     startStudy()
 
     const studyGoOn = async () => {
-      const choices = ['继续', '不学了，学个屁']
+      const choices = ['继续', '学习? 学个屁.jpg']
       const questions = [
         {
           type: 'list',
